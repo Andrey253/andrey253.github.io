@@ -20,7 +20,7 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <!-- <base href="/"> -->
+  <!-- <base href="$FLUTTER_BASE_HREF"> -->
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -43,30 +43,17 @@
       var url = window.location.href
       var linkOk = window.location.assign(url.replace('https', 'allmarket')) != undefined
       if (linkOk) { return false }
-      window.location.assign(url.replace('',''))
+      window.location.assign('https://andrey253.github.io/start.html')
     }
+    // The value below is injected by flutter build, do not touch.
+    var serviceWorkerVersion = null;
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
 
-<body>
-  <script>
-    redirect()
-    window.addEventListener('load', function (ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function (engineInitializer) {
-          engineInitializer.initializeEngine().then(function (appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
-    });
-  </script>
+<body onload=" redirect()">
+
 </body>
 
 </html>
