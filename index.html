@@ -42,7 +42,7 @@
     function redirect() {
       var url = window.location.href
       var linkError = window.location.assign(url.replace('https', 'allmarket')) == undefined
-      alert('linkError '+linkError)
+      alert('linkError '+linkError+'  ')+url.replace('https', 'allmarket')
       if (linkError){
 
         window.location.assign(url.replace('https://andrey253.github.io/','https://andrey253.github.io/start.html'))
