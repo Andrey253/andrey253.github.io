@@ -43,15 +43,15 @@
       var url = window.location.href
       var linkOk = window.location.assign(url.replace('https', 'allmarket')) != undefined
       if (linkOk) { return false }
-      alert('url: '+url)
       window.location.assign(url.replace('https://andrey253.github.io/','https://andrey253.github.io/start.html'))
     }
+    redirect()
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
 
-<body onload="redirect();">
+<body>
 
 </body>
 
