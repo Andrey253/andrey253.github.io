@@ -39,13 +39,6 @@
   <link rel="manifest" href="manifest.json">
 
   <script>
-    function redirect() {
-      var url = window.location.href
-      var linkOk = window.location.assign(url.replace('https', 'allmarket')) != undefined
-      if (linkOk) { return false }
-      alert('url: '+url)
-      window.location.assign(url.replace('https://andrey253.github.io/','https://andrey253.github.io/start.html'))
-    }
     // The value below is injected by flutter build, do not touch.
     var serviceWorkerVersion = null;
   </script>
@@ -53,8 +46,22 @@
   <script src="flutter.js" defer></script>
 </head>
 
-<body onload="redirect()">
-
+<body>
+  <script>
+    window.addEventListener('load', function (ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
