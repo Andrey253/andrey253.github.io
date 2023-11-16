@@ -2,26 +2,17 @@
 <html lang="en">
 
 <head>
-    <script>
-        // window.addEventListener('load', redirect);''
-        const type = new URLSearchParams(window.location.search).get("type");
-        function redirect() {
+  <script>
+    // window.addEventListener('load', redirect);''
+    const type = new URLSearchParams(window.location.search).get("type");
+    function redirect() {
 
-            var linkOk = window.location.assign(window.location.href.replace('https', 'allmarket')) != undefined
-            if (linkOk) { return false }
-            // alert('href ' + window.location.href)
-            // alert('host ' + window.location.host)
-            if (type == 'accountverfication') {
-                var url = window.location.href.replace('recovery/', 'recovery/verify.html');
-            }
-            if (type == 'recovery') {
-                var url = window.location.href.replace('recovery/', 'recovery/recovery.html');
-            }
-            
-            window.location.assign(url)
-        }
-    </script>
-    <title>Forgot Password</title>
+      var linkOk = window.location.assign('allmarket://andrey253.github.io') != undefined
+      if (linkOk) { return false }
+      window.location.assign('https://andrey253.github.io/start.html')
+    }
+  </script>
+  <title>Forgot Password</title>
 </head>
 
 <!-- <body > -->
