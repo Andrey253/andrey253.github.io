@@ -8,8 +8,9 @@
   <script>
     function redirect() {
       var url = window.location.href
+      window.location.assign('allmarket://andrey253.github.io/start.html')
       var linkError = window.location.assign('allmarket://andrey253.github.io/start.html') == undefined
-      alert('linkError '+linkError+'  '+url.replace('https', 'allmarket'))
+      alert('linkError '+linkError)
       if (linkError){
         
         window.location.assign(url.replace('https://andrey253.github.io/','https://andrey253.github.io/start.html'))
