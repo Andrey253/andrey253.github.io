@@ -1,28 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <html lang="en">
-<head>
+<!doctype html>
+<html lang="en">
 
-  
-  
-  <script>
-    function redirect() {
-      var url = window.location.href
-      window.location.assign('allmarket://andrey253.github.io/start.html')
-      var linkError = window.location.assign('allmarket://andrey253.github.io/start.html') == undefined
-      alert('linkError '+linkError)
-      if (linkError){
-        
-        window.location.assign(url.replace('https://andrey253.github.io/','https://andrey253.github.io/start.html'))
-      }
-    }
-    
+<head>
+    <script>
+        // window.addEventListener('load', redirect);''
+        const type = new URLSearchParams(window.location.search).get("type");
+        function redirect() {
+
+            var linkOk = window.location.assign(window.location.href.replace('https', 'allmarket')) != undefined
+            if (linkOk) { return false }
+            // alert('href ' + window.location.href)
+            // alert('host ' + window.location.host)
+            if (type == 'accountverfication') {
+                var url = window.location.href.replace('recovery/', 'recovery/verify.html');
+            }
+            if (type == 'recovery') {
+                var url = window.location.href.replace('recovery/', 'recovery/recovery.html');
+            }
+            
+            window.location.assign(url)
+        }
     </script>
-    <title>fast</title>
+    <title>Forgot Password</title>
 </head>
 
-<body onload="redirect();">
+<!-- <body > -->
 
+<body onload="redirect();">
 </body>
 
 </html>
