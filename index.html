@@ -1,46 +1,23 @@
 <!DOCTYPE html>
 <html>
-
+  <html lang="en">
 <head>
 
-  <!-- Croppie -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.css" />
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <!-- <base href="/"> -->
-
-  <meta charset="UTF-8">
-
-
-
-  <title>fast</title>
-
-
+  
+  
   <script>
     function redirect() {
       var url = window.location.href
       var linkError = window.location.assign('allmarket://andrey253.github.io') == undefined
       alert('linkError '+linkError+'  '+url.replace('https', 'allmarket'))
       if (linkError){
-
+        
         window.location.assign(url.replace('https://andrey253.github.io/','https://andrey253.github.io/start.html'))
       }
     }
-
-  </script>
+    
+    </script>
+    <title>fast</title>
 </head>
 
 <body onload="redirect();">
